@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'package:robot/map/ScrollSheetPage/ScrollSheetPage.dart';
 // import 'package:location/location.dart';
 
 class MapPage extends StatefulWidget {
@@ -96,9 +97,9 @@ class _MapPage extends State<MapPage> {
                 )
             ),
             DraggableScrollableSheet(
-              initialChildSize: 0.4,
-              minChildSize: 0.4,
-              maxChildSize: 1.0,
+              initialChildSize: 0.03,
+              minChildSize: 0.03,
+              maxChildSize: 0.9,
               builder: (BuildContext context, ScrollController scrollController) {
                 return SingleChildScrollView(
                   controller: scrollController,
@@ -109,7 +110,7 @@ class _MapPage extends State<MapPage> {
                               topLeft: Radius.circular(50),
                               topRight: Radius.circular(50)),
                           color: Colors.white),
-                      child:
+                      child: ScrollSheetPage()
                   ),
                 );
               },

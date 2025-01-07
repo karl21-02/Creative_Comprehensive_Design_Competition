@@ -20,8 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primaryColor: Colors.white,
+        colorScheme: ColorScheme.light(
+          primary: Colors.white, // 기본 색상
+          background: Colors.white, // 배경 색상
+          onBackground: Colors.black, // 배경 위 텍스트 색상
+        ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
