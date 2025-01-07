@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:robot/family/AdvertisementPage.dart';
 import 'package:robot/family/CardViewSlider.dart';
 import 'package:robot/family/title/FamilyTitle.dart';
 
@@ -18,109 +19,112 @@ class _FamilyManagePage extends State<FamilyManagePage> {
       appBar: AppBar(
         title: FamilyTitle(),
       ),
-      body: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Center(
-              child: Container(
-                margin: EdgeInsets.all(30),
-                height: 50,
-                width: 400,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: TextField(
-                  style: const TextStyle(fontSize: 15.0),
-                  controller: controller,
-                  decoration: const InputDecoration(
-                    labelText: 'search',
-                    suffixIcon: Icon(Icons.search),
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(left: 16.0),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Center(
+                child: Container(
+                  margin: EdgeInsets.all(30),
+                  height: 50,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: TextField(
+                    style: const TextStyle(fontSize: 15.0),
+                    controller: controller,
+                    decoration: const InputDecoration(
+                      labelText: 'search',
+                      suffixIcon: Icon(Icons.search),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(left: 16.0),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        '#Special For You',
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          // 버튼 클릭 이벤트 처리
-                        },
-                        child: const Text('see all'),
-                        style: TextButton.styleFrom(
-                          foregroundColor: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Center(
-              child: SizedBox(
-                width: 720,
-                height: 300,
-                child: CardViewSlider()
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 30),
-              child:  Padding(
-                padding: EdgeInsets.all(0.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        _buildMenu(
-                          icon: Icons.calendar_month,
-                          color: Colors.blueAccent,
-                          title: '일정 관리',
-                          subTitle: '',
+                        const Text(
+                          '#Special For You',
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                         ),
-                        _buildMenu(
-                          icon: Icons.question_mark,
-                          color: Colors.blueAccent,
-                          title: '키트 사용 설명서',
-                          subTitle: '',
+                        TextButton(
+                          onPressed: () {
+                            // 버튼 클릭 이벤트 처리
+                          },
+                          child: const Text('see all'),
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.grey,
+                          ),
                         ),
                       ],
                     ),
-                    Row(
+                  ),
+                ],
+              ),
+              Center(
+                child: SizedBox(
+                    width: 720,
+                    height: 300,
+                    child: CardViewSlider()
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 30),
+                child:  Padding(
+                    padding: EdgeInsets.all(0.0),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        _buildMenu(
-                          icon: Icons.favorite,
-                          color: Colors.blueAccent,
-                          title: '자주 가는 곳',
-                          subTitle: '',
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            _buildMenu(
+                              icon: Icons.calendar_month,
+                              color: Colors.blueAccent,
+                              title: '일정 관리',
+                              subTitle: '',
+                            ),
+                            _buildMenu(
+                              icon: Icons.question_mark,
+                              color: Colors.blueAccent,
+                              title: '키트 사용 설명서',
+                              subTitle: '',
+                            ),
+                          ],
                         ),
-                        _buildMenu(
-                          icon: Icons.settings,
-                          color: Colors.blueAccent,
-                          title: '설정',
-                          subTitle: '',
-                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            _buildMenu(
+                              icon: Icons.favorite,
+                              color: Colors.blueAccent,
+                              title: '자주 가는 곳',
+                              subTitle: '',
+                            ),
+                            _buildMenu(
+                              icon: Icons.settings,
+                              color: Colors.blueAccent,
+                              title: '설정',
+                              subTitle: '',
+                            ),
+                          ],
+                        )
                       ],
                     )
-                  ],
-                )
+                ),
               ),
-            )
-          ],
+              AdvertisementPage(),
+            ],
+          ),
         ),
       )
     );

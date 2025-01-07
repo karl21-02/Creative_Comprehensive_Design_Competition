@@ -9,8 +9,8 @@ class FamilyTitle extends StatefulWidget {
 
 class _FamilyTitle extends State<FamilyTitle> {
 
-  final _valueList = ["용인시", "춘천시", "서울시"];
-  var _selectedValue = '용인시';
+  final _valueList = ["대한민국", "일본", "중국", "미국", "영국", "호주"];
+  var _selectedValue = '대한민국';
 
   @override
   Widget build(BuildContext context) {
