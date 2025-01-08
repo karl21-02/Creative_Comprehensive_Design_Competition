@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "263884589959",
+    "firebase_url": "https://jmtcc-b35f4-default-rtdb.firebaseio.com",
+    "project_id": "jmtcc-b35f4",
+    "storage_bucket": "jmtcc-b35f4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263884589959:android:2b29e99512eedc69196122",
+        "android_client_info": {
+          "package_name": "com.example.robot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ4X3x2F7Y9X9R0yFn1g3iZFjegCGPjY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,23 @@
+//plugins {
+//    // ...
+//
+//    // Add the dependency for the Google services Gradle plugin
+//    id 'com.google.gms.google-services' version '4.4.2' apply false
+//
+//}
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Firebase Gradle 플러그인 추가
+        classpath 'com.google.gms:google-services:4.4.2'  // 최신 버전으로 업데이트 확인
+        // 다른 필요한 Gradle 플러그인 추가
+    }
+}
+
 allprojects {
     repositories {
         google()

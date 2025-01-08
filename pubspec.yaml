@@ -15,11 +15,16 @@ dependencies:
   cupertino_icons: ^1.0.6
 
   google_maps_flutter: any
-  location: any
+  location: ^7.0.1
+  firebase_database: ^11.3.0
+  firebase_core: ^3.10.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+  url_launcher: ^6.3.1
 
 flutter:
   uses-material-design: true
@@ -31,3 +36,7 @@ flutter:
     - assets/car5.png
     - assets/burger.png
     - assets/coupon.png
+    - assets/grandmother.png
+    - assets/siren.png
+    - assets/phone.png
+    - assets/bell.png

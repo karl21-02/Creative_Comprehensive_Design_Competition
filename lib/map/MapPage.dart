@@ -109,8 +109,21 @@ class _MapPage extends State<MapPage> {
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(50),
                               topRight: Radius.circular(50)),
-                          color: Colors.white),
-                      child: ScrollSheetPage()
+                          color: Colors.white
+                      ),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 10,
+                            child: Container(
+                              width: 100,
+                              margin: EdgeInsets.only(top: 5),
+                              color: Colors.grey,
+                            ),
+                          ),
+                          ScrollSheetPage(),
+                        ],
+                      )
                   ),
                 );
               },

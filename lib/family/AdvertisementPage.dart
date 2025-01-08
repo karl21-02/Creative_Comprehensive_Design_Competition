@@ -37,7 +37,7 @@ class _AdvertisementPage extends State<AdvertisementPage> {
           Column(
             children: [
               Text("목요일 6시"),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Image.asset('assets/coupon.png', height: 35,)

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'danger/DangerPage.dart';
@@ -6,14 +7,12 @@ import 'map/MapPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await Firebase.initializeApp(); // Firebase 초기화
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +20,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.white,
-        colorScheme: ColorScheme.light(
-          primary: Colors.white, // 기본 색상
-          background: Colors.white, // 배경 색상
-          onBackground: Colors.black, // 배경 위 텍스트 색상
+        colorScheme: const ColorScheme.light(
+          primary: Colors.white,
+          background: Colors.white,
+          onBackground: Colors.black,
         ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -42,13 +41,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
     MapPage(),
     FamilyManagePage(),
-    DangerPage()
+    DangerPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -74,8 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: '가족',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.dangerous),
-            label: '위험',
+            icon: Icon(Icons.doorbell_rounded),
+            label: '알림',
           ),
         ],
         currentIndex: _selectedIndex,
@@ -83,16 +81,5 @@ class _MyHomePageState extends State<MyHomePage> {
         onTap: _onItemTapped,
       ),
     );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }
